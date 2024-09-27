@@ -1,6 +1,6 @@
 require 'keymaps'
 require 'autocommands'
-require 'plugins.lazy-init'
+require 'lazy-init'
 require 'plugins.init'
 
 require 'set'
