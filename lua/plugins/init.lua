@@ -5,6 +5,9 @@
 --
 --
 --
+--
+--require('lazy').setup('plugins', { concurrency = 10 })
+
 require('lazy').setup({
     'tpope/vim-sleuth',
     { 'numToStr/Comment.nvim', opts = {} },
@@ -48,7 +51,7 @@ require('lazy').setup({
     require 'plugins.markdown-preview',
     require 'plugins.autopairs',
     require 'plugins.neo-tree',
-    --require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+    require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },

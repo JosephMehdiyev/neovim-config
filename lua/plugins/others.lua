@@ -1,6 +1,44 @@
 return {
 
     { -- Adds git related signs to the gutter, as well as utilities for managing changes
+        {
+            'windwp/nvim-ts-autotag', -- Plugin repository
+            dependencies = { 'nvim-treesitter/nvim-treesitter' }, -- Ensure Treesitter is installed
+            config = function()
+                -- Plugin configuration goes here
+                require('nvim-ts-autotag').setup {
+                    opts = {
+                        -- Global configuration
+                        enable_close = true, -- Auto close tags
+                        enable_rename = true, -- Auto rename pairs of tags
+                        enable_close_on_slash = false, -- Don't auto close on trailing </
+                    },
+                    -- Override per-filetype settings if needed
+                    per_filetype = {
+                        ['html'] = {
+                            enable_close = false, -- Disable tag closing in HTML files
+                        },
+                    },
+                }
+            end,
+        },
+        {
+            'aurum77/live-server.nvim',
+            run = function()
+                require('live_server.util').install()
+            end,
+            cmd = { 'LiveServer', 'LiveServerStart', 'LiveServerStop' },
+            config = function()
+                -- Live server configuration
+                require('live_server').setup {
+                    port = 7567,
+                    browser_command = 'librewolf',
+                    quiet = false,
+                    no_css_inject = true,
+                    install_path = os.getenv 'HOME' .. '/live/',
+                }
+            end,
+        },
         'hiphish/rainbow-delimiters.nvim',
         'lewis6991/gitsigns.nvim',
         { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
