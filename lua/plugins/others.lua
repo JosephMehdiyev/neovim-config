@@ -11,13 +11,7 @@ return {
                         -- Global configuration
                         enable_close = true, -- Auto close tags
                         enable_rename = true, -- Auto rename pairs of tags
-                        enable_close_on_slash = false, -- Don't auto close on trailing </
-                    },
-                    -- Override per-filetype settings if needed
-                    per_filetype = {
-                        ['html'] = {
-                            enable_close = false, -- Disable tag closing in HTML files
-                        },
+                        enable_close_on_slash = true, -- Auto close on trailing </
                     },
                 }
             end,
@@ -40,7 +34,6 @@ return {
             end,
         },
         'hiphish/rainbow-delimiters.nvim',
-        'lewis6991/gitsigns.nvim',
         { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
         {
             'folke/tokyonight.nvim',
@@ -97,7 +90,6 @@ return {
         end,
     },
     { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-
     { 'xiyaowong/transparent.nvim' },
     { 'navarasu/onedark.nvim' },
 }
