@@ -38,6 +38,7 @@ require('lazy').setup({
     --
     -- See `:help gitsigns` to understand what the configuration keys do
 
+    require 'plugins.deoplete',
     require 'plugins.which-key',
     require 'plugins.telescope',
     require 'plugins.debug',
@@ -51,6 +52,7 @@ require('lazy').setup({
     require 'plugins.markdown-preview',
     require 'plugins.autopairs',
     require 'plugins.neo-tree',
+    require 'plugins.conform',
     require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
     {
         'nvim-lualine/lualine.nvim',
