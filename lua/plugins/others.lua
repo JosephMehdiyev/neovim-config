@@ -16,40 +16,13 @@ return {
                 }
             end,
         },
-        {
-            'aurum77/live-server.nvim',
-            run = function()
-                require('live_server.util').install()
-            end,
-            cmd = { 'LiveServer', 'LiveServerStart', 'LiveServerStop' },
-            config = function()
-                -- Live server configuration
-                require('live_server').setup {
-                    port = 7567,
-                    browser_command = 'librewolf',
-                    quiet = false,
-                    no_css_inject = true,
-                    install_path = os.getenv 'HOME' .. '/live/',
-                }
-            end,
-        },
-        'hiphish/rainbow-delimiters.nvim',
-        { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
-        {
-            'folke/tokyonight.nvim',
-            lazy = false,
-            priority = 1000,
-            opts = {},
-        },
-        opts = {
-            signs = {
-                add = { text = '+' },
-                change = { text = '~' },
-                delete = { text = '_' },
-                topdelete = { text = '‾' },
-                changedelete = { text = '~' },
-            },
-        },
+    },
+    {
+        'windwp/nvim-autopairs',
+        event = 'InsertEnter',
+        config = true,
+        -- use opts = {} for passing setup options
+        -- this is equivalent to setup({}) function
     },
     { -- Collection of various small independent plugins/modules
         'echasnovski/mini.nvim',

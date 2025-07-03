@@ -3,6 +3,10 @@ return {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
         opts = {
+            matchup = {
+                enable = true, -- mandatory, enables matchup integration
+                disable_virtual_text = true,
+            },
             ensure_installed = {
                 'latex',
                 'javascript',

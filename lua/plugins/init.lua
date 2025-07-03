@@ -13,12 +13,13 @@ require('lazy').setup({
     { 'numToStr/Comment.nvim', opts = {} },
     {
         'lervag/vimtex',
+        ft = 'tex',
+        priority = 1000,
         lazy = false, -- we don't want to lazy load VimTeX
         -- tag = "v2.15", -- uncomment to pin to a specific release
         init = function()
             -- VimTeX configuration goes here, e.g.
             vim.g.vimtex_view_method = 'zathura'
-            vim.g.vimtex_delim_enabled = 0
         end,
     },
 
@@ -39,20 +40,15 @@ require('lazy').setup({
     -- See `:help gitsigns` to understand what the configuration keys do
 
     require 'plugins.deoplete',
+    require 'plugins.vim-matchup',
     require 'plugins.which-key',
     require 'plugins.telescope',
-    require 'plugins.debug',
     require 'plugins.lspconfig',
     require 'plugins.treesitter',
     require 'plugins.others',
-    require 'plugins.ale',
     require 'plugins.indent_line',
     require 'plugins.tab',
-    require 'plugins.R',
-    require 'plugins.markdown-preview',
-    require 'plugins.autopairs',
     require 'plugins.neo-tree',
-    require 'plugins.conform',
     require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
     {
         'nvim-lualine/lualine.nvim',
